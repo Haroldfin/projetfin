@@ -1,0 +1,146 @@
+
+
+.aa-icon-aa-icon-rejected{
+	background: url(../icons/rejected1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-aa-icon-rejected:hover{
+	background: url(../icons/rejected2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-aa-icon-acknowleged{
+	background: url(../icons/acknowleged1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-acknowleged:hover{
+	background: url(../icons/acknowleged2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-receiving{
+	background: url(../icons/receiving1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-receiving:hover{
+	background: url(../icons/receiving2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-requested{
+	background: url(../icons/requested1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-requested:hover{
+	background: url(../icons/requested2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-pending{
+	background: url(../icons/pending1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-pending:hover{
+	background: url(../icons/pending2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-paid{
+	background: url(../icons/paid1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-paid:hover{
+	background: url(../icons/paid2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-notinvoiced{
+	background: url(../icons/notinvoiced1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-notinvoiced:hover{
+	background: url(../icons/notinvoiced2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-invoiced{
+	background: url(../icons/invoiced1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-invoiced:hover{
+	background: url(../icons/invoiced2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-inprogress{
+	background: url(../icons/inprogress1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-inprogress:hover{
+	background: url(../icons/inprogress2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-approved{
+	background: url(../icons/approved1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-approved:hover{
+	background: url(../icons/approved2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-closed{
+	background: url(../icons/closed1.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-closed:hover{
+	background: url(../icons/closed2.png) no-repeat;
+	background-size: 32px 32px;
+}
+
+.aa-icon-all{
+	background: url(../icons/all.png) no-repeat;
+	background-size: 32px 32px;
+	width: 37px;
+	height: 37px;
+}
+
+.aa-icon-all:hover{
+	background: url(../icons/all_h.png) no-repeat;
+}
+
+

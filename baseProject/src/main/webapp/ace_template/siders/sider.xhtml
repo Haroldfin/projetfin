@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich" xmlns:p="http://primefaces.org/ui" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<div class="sidebar" id="sidebar">
+		<ul id="sider" class="nav nav-list">
+			<li class="active">
+				<a href="#" class="dropdown-toggle">
+					<span class="menu-text">
+						<h:outputText value="My Expenses" />
+					</span>
+
+					<b class="arrow icon-angle-down"></b>
+				</a>
+
+				<ul class="submenu">
+					<li class="#{(view.viewId=='/myexpensepaymentList.xhtml')?'active':''}">
+						<a href="aaabase-datatable.xhtml">
+							<i class="icon-money orange bigger-150" style="margin-left: 20px; display: inline"></i>
+							<h:outputText value="Expenses History" style="margin-left:20px" />
+						</a>
+					</li>
+				</ul>
+			</li>
+			<f:subview rendered="#{sessionView.isAssistant() or sessionView.isProjectManager() or sessionView.isLobManager() or sessionView.isKeyAccountManager() or sessionView.isCfo()}">
+				<li class="active">
+					<a href="#" class="dropdown-toggle">
+						<span class="menu-text">
+							<h:outputText value="Title" />
+						</span>
+
+						<b class="arrow icon-angle-down"></b>
+					</a>
+
+					<ul class="submenu">
+						<li class="#{(view.viewId=='/budgetList.xhtml')?'active':''}">
+							<a href="budgetList.xhtml">
+								<i class="icon-folder-close blue bigger-150" style="margin-left: 20px; display: inline"></i>
+								<h:outputText value="Budgets List" style="margin-left:20px" />
+							</a>
+						</li>
+
+						<li class="#{(view.viewId=='/expensepaymentList.xhtml')?'active':''}">
+							<a href="expensepaymentList.xhtml">
+								<i class="icon-money pink bigger-150" style="margin-left: 20px; display: inline"></i>
+								<h:outputText value="Expenses List" style="margin-left:20px" />
+							</a>
+						</li>
+					</ul>
+				</li>
+			</f:subview>
+			<f:subview rendered="#{sessionView.isCfo() or sessionView.isAccountant()}">
+				<li class="active">
+					<a href="#" class="dropdown-toggle">
+						<span class="menu-text">
+							<h:outputText value="Payments" />
+						</span>
+
+						<b class="arrow icon-angle-down"></b>
+					</a>
+
+					<ul class="submenu">
+						<li class="#{(view.viewId=='/bankpaymentList.xhtml')?'active':''}">
+							<a href="bankpaymentList.xhtml">
+								<i class="icon-exchange green bigger-150" style="margin-left: 20px; display: inline"></i>
+								<h:outputText value="Bank Payments List" style="margin-left:20px" />
+							</a>
+						</li>
+
+					</ul>
+				</li>
+			</f:subview>
+		</ul>
+
+		<div class="sidebar-collapse" id="sidebar-collapse">
+			<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+		</div>
+		<p:ajaxStatus style="margin:auto;width:30px;height:30px;" id="ajaxStatusPanel">
+			<f:facet name="start">
+				<i class="icon-spinner icon-spin grey icon-2x" />
+			</f:facet>
+			<f:facet name="complete">
+				<h:outputText value="" />
+			</f:facet>
+		</p:ajaxStatus>
+	</div>
+
+	<div class="visible-xs mobile-sider" style="width: 100%">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Menu</button>
+			<ul class="dropdown-menu" role="menu">
+				<li>
+					<a href="myexpensepaymentList.xhtml">
+						<span class="menu-text"> 
+						<h:outputText value="My Expenses"/>
+						 </span>
+					</a>
+				</li>
+				<li class="divider"></li>
+				<f:subview rendered="#{sessionView.isAssistant() or sessionView.isProjectManager() or sessionView.isLobManager() or sessionView.isKeyAccountManager() or sessionView.isCfo()}">
+					<li>
+						<a href="budgetList.xhtml">
+							<img alt="" src="resources/sider/lm-tools-icon.png" />&nbsp;&nbsp;
+							<h:outputText value="Budgets List" />
+						</a>
+					</li>
+					<li>
+						<a href="expensepaymentList.xhtml">
+							<img alt="" src="resources/sider/request-icon.png" />&nbsp;&nbsp;
+							<h:outputText value="Expenses List" />
+						</a>
+					</li>
+					
+					<li class="divider"></li>
+				</f:subview>
+			</ul>
+		</div>
+	</div>
+
+</ui:composition>
+

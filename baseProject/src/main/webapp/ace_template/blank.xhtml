@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title><ui:insert name="title">Title</ui:insert></title>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--basic styles-->
+	<link href="ace_template/assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="ace_template/assets/css/font-awesome.min.css" />
+	<!--[if IE 7]>
+		  <link rel="stylesheet" href="ace_template/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+	<!-- page specific plugin styles -->
+	<!-- fonts -->
+	<link rel="stylesheet" href="ace_template/assets/css/ace-fonts.css" />
+
+	<link rel="stylesheet" href="ace_template/assets/css/colorbox.css" />
+	<!-- ace styles -->
+	<link rel="stylesheet" href="ace_template/assets/css/ace.min.css" />
+	<link rel="stylesheet" href="ace_template/assets/css/ace-rtl.min.css" />
+	<link rel="stylesheet" href="ace_template/assets/css/ace-skins.min.css" />
+
+	<link rel="stylesheet" href="ace_template/assets/css/custom.css" />
+	<link rel="stylesheet" href="resources/css/icons.css" />
+
+	<link rel="stylesheet" href="ace_template/assets/css/jquery.slider.css" type="text/css" />
+	<script src="ace_template/assets/js/jquery.slider.min.js" type="text/javascript"></script>
+
+	<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="ace_template/assets/css/ace-ie.min.css" />
+		<![endif]-->
+	<!-- inline styles related to this page -->
+	<!-- ace settings handler -->
+	<script src="ace_template/assets/js/ace-extra.min.js"></script>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="ace_template/assets/js/html5shiv.js"></script>
+		<script src="ace_template/assets/js/respond.min.js"></script>
+		<![endif]-->
+	<script>
+		function updateDialogCss() {
+           		$('.ui-dialog-content').css('padding','15px 0px 0px 0px');
+           	}
+           	updateDialogCss();
+           	</script>
+
+</h:head>
+
+<h:body>
+
+	<div class="navbar navbar-default" id="navbar">
+		<ui:insert name="header">header</ui:insert>
+	</div>
+
+	<div class="main-container" id="main-container">
+		<div class="main-container-inner">
+			<ui:insert name="sider">sider</ui:insert>
+
+
+			<div class="main-content">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ui:insert name="navigator">navigator</ui:insert>
+				</div>
+				<div class="page-content">
+					<ui:insert name="body">body</ui:insert>
+				</div>
+			</div>
+		</div>
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a>
+	</div>
+
+
+	<!-- basic scripts -->
+
+	<script src="ace_template/assets/js/bootstrap.min.js"></script>
+	<script src="ace_template/assets/js/typeahead-bs2.min.js" />
+
+	<!-- ace scripts -->
+
+	<script src="ace_template/assets/js/ace-elements.min.js"></script>
+	<script src="ace_template/assets/js/ace.min.js"></script>
+	<!-- inline scripts related to this page -->
+
+	<script>
+			jQuery(function($) {
+				$('[data-rel=tooltip]').tooltip();
+				$('.aa_tooltip').tooltip();
+				$('[data-rel=popover]').popover({html:true});
+			});
+			
+			
+			function updateCss() {
+            	$('.ui-inplace-editor').addClass('editable-buttons');
+	           	$('.ui-inplace-editor button span[class="ui-button-text"]').addClass('hide');
+	           	
+	           	$('.ui-inplace-editor button[title="save"]').addClass('btn btn-info editable-submit');
+	           	$('.ui-inplace-editor button[title="save"]').removeClass('ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-inplace-save');
+	           	$('.ui-inplace-editor button[title="save"] span').addClass('icon-ok icon-white');
+	           	$('.ui-inplace-editor button[title="save"] span').removeClass('ui-button-icon-left ui-icon ui-icon-check ');
+	           	$('.ui-inplace-editor button[title="save"] span[class="ui-button-text ui-c icon-ok icon-white"]').remove();
+	           	
+	           	$('.ui-inplace-editor button[title="cancel"]').addClass('btn btn-warning editable-cancel');
+	           	$('.ui-inplace-editor button[title="cancel"]').removeClass('ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-inplace-cancel');
+	           	$('.ui-inplace-editor button[title="cancel"] span').addClass('icon-remove icon-white');
+	           	$('.ui-inplace-editor button[title="cancel"] span').removeClass('ui-button-icon-left ui-icon ui-icon-close ');
+	           	$('.ui-inplace-editor button[title="cancel"] span[class="ui-button-text ui-c icon-remove icon-white"]').remove();
+           	}
+           	updateCss();
+           	
+           	function enableDatepicker(){
+           		$( ".datepicker" ).datepicker({
+					showOtherMonths: true,
+					selectOtherMonths: false,
+					changeYear: true,
+					changeMonth: true,
+					dateFormat: "dd/mm/yy"
+				});
+           	}
+           	enableDatepicker();
+
+		</script>
+	<script src="ace_template/assets/js/jquery.slimscroll.min.js" />
+	<script>
+			$('.slim-scroll').each(function() {
+				var $this = $(this);
+				$this.slimScroll({
+					height : $this.data('height') || 100,
+					railVisible : true
+				});
+			});
+		</script>
+
+	<h:form>
+
+		<p:dialog id="reset" styleClass="password" widgetVar="passwordDlg" modal="true" width="500" closable="false" resizable="false" draggable="true" showHeader="false">
+			<button type="button" class="bootbox-close-button close" onclick="passwordDlg.hide()" style="margin-right: 15px">×</button>
+			<div class="modal-header" style="margin-bottom: 20px">
+				<h4 class="modal-title">Change Password</h4>
+			</div>
+			<p:messages id="messages" closable="true" />
+			<h:panelGrid id="editZone" style="width:80%;margin-left: 20px" columns="2">
+				<h:outputText value="Old Password" />
+				<p:password value="#{profileView.oldPassword}" required="true" requiredMessage="You should insert your old password" />
+				<h:outputText value="New Password" />
+				<p:password value="#{profileView.newPassword}" required="true" requiredMessage="New password is required" />
+				<h:outputText value="Repeat Password" />
+				<p:password value="#{profileView.again}" required="true" requiredMessage="Please retape your new password" />
+
+			</h:panelGrid>
+			<br />
+			<br />
+			<div class="modal-footer">
+				<p:commandButton onclick="passwordDlg.hide()" value="Cancel" styleClass="btn btn-info" />
+				<p:commandButton action="#{profileView.changePassword()}" value="Save" styleClass="btn btn-success" update="messages" oncomplete="passwordDlg.hide()" />
+			</div>
+		</p:dialog>
+		<script>
+			$('.password .ui-dialog-content').css('padding','15px 0px 0px 0px');
+		</script>
+	</h:form>
+
+</h:body>
+</html>

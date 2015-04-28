@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich" xmlns:p="http://primefaces.org/ui" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+	<div id="sidebar" class="sidebar responsive">
+		<h:form id="sider_form">
+			<h:panelGroup id="sider-panel">
+				<ul class="nav nav-list">
+
+
+					<li class="active">
+						<a href="#" class="dropdown-toggle">
+							<span class="menu-text">
+								<h:outputText value="My Data" />
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li>
+								<a href="viewPersonalData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/9.png" style="margin-right: 10px" />
+									<h:outputText value="Personal data" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="viewEmploymentData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/10.png" style="margin-right: 10px" />
+									<h:outputText value="Employment data" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="viewEducationData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/11.png" style="margin-right: 10px" />
+									<h:outputText value="Education data" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="active">
+						<a href="#" class="dropdown-toggle">
+							<span class="menu-text">
+								<h:outputText value="My Leaves" />
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li>
+								<a href="viewLeaveData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/12.png" style="margin-right: 10px" />
+									<h:outputText value="My Leaves" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="viewCalendar.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/13.png" style="margin-right: 10px" />
+									<h:outputText value="My Team Calendar" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="viewEntryData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/8.png" style="margin-right: 10px" />
+									<h:outputText value="My Presences List" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="active">
+						<a href="#" class="dropdown-toggle">
+							<span class="menu-text">
+								<h:outputText value="Self Service" />
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li>
+								<a href="viewCertificateData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/14.png" style="margin-right: 10px" />
+									<h:outputText value="My certificates" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="viewInsuranceData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/15.png" style="margin-right: 10px" />
+									<h:outputText value="Insurance Follow" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="viewRequestData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/16.png" style="margin-right: 10px" />
+									<h:outputText value="My Requests" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="active">
+						<a href="#" class="dropdown-toggle">
+							<span class="menu-text">
+								<h:outputText value="Misconducts" />
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li>
+								<a href="viewAbsenceData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/17.png" style="margin-right: 10px" />
+									<h:outputText value="My Absences" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="viewWarningData.xhtml">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<img src="resources/images/sider/18.png" style="margin-right: 10px" />
+									<h:outputText value="Warnings" />
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="active">
+						<a href="directory.xhtml">
+							<span class="menu-text">
+								<h:outputText value="Directory" />
+							</span>
+						</a>
+					</li>
+				</ul>
+			</h:panelGroup>
+		</h:form>
+
+
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+
+		<p:ajaxStatus id="ajaxStatusPanel">
+			<f:facet name="start">
+				<i class="ace-icon fa fa-spinner fa-spin grey bigger-125" />
+			</f:facet>
+			<f:facet name="complete">
+				<h:outputText value="" />
+			</f:facet>
+		</p:ajaxStatus>
+
+
+	</div>
+
+
+</ui:composition>

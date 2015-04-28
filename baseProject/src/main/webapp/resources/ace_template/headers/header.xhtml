@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<h:form id="header_form">
+		<div id="navbar" class="navbar navbar-default">
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>
+							<i>
+								<h:graphicImage value="/resources/images/MyHR_Logo_3Gcom.png" width="200" height="50" alt="logo" style="float:left" />
+							</i>
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="hidden-sm hidden-md hidden-lg">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-list-alt "></i>
+							</a>
+
+							<ul class="dropdown-menu-left dropdown-navbar navbar-blue dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-list-alt"></i>
+									<h:outputText value="Main Menu" />
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+														<h:outputText value="New Comments" />
+													</span>
+													<span class="pull-right badge badge-info">
+														<h:outputText value="+12" />
+													</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<i class="btn btn-xs btn-primary fa fa-user"></i>
+												<h:outputText value="Bob just signed up as an editor ..." />
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+														<h:outputText value="New Orders" />
+													</span>
+													<span class="pull-right badge badge-success">
+														<h:outputText value="+8" />
+													</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+														<h:outputText value="Followers" />
+													</span>
+													<span class="pull-right badge badge-info">
+														<h:outputText value="+11" />
+													</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#">
+										<h:outputText value="See all notifications" />
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="green">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-tasks"></i>
+								<span class="badge badge-grey">
+									<h:outputText value="5" />
+								</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-check"></i>
+									<h:outputText value="General Tasks" />
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a href="requestWaitingList.xhtml">
+												<span class="clearfix">
+													<span class="pull-left">
+														<i class="ace-icon fa fa-tags green " style="font-size: 20px" />
+														&nbsp;&nbsp;
+														<h:outputText value=" Requests To Acknowledge" />
+													</span>
+													<span class="pull-right badge badge-success">
+														<h:outputText value="3" />
+													</span>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="insuranceWaitingList.xhtml">
+												<span class="clearfix">
+													<span class="pull-left">
+														<i class="ace-icon fa fa-medkit pink " style="font-size: 20px" />
+														&nbsp;&nbsp;
+														<h:outputText value=" Insurances To Acknowledge" />
+													</span>
+													<span class="pull-right badge badge-pink">
+														<h:outputText value="2" />
+													</span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+
+						<li class="purple">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-envelope #{messageView.totalUnreadMessages>0?'icon-animated-vertical':''}"></i>
+								<span class="badge badge-pink">
+									<h:outputText value="#{messageView.totalUnreadMessages}" />
+								</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-envelope-o"></i>
+									<h:outputText value="#{messageView.totalUnreadMessages} Unread Messages" />
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<ui:repeat var="message" value="#{messageView.headerMessageList}">
+											<li>
+												<h:outputLink value="messages.xhtml" styleClass="clearfix">
+													<f:param name="idmessage" value="#{message.idmessage}" />
+													<img src="#{genericView.getIdPhoto(message.sender)}" class="msg-photo" alt="Alex's Avatar" />
+													<span class="msg-body">
+														<span class="msg-title">
+															<span class="green">
+																<h:outputText value="#{genericView.getFullName(message.sender)}:" />
+															</span>
+															<h:outputText value="#{message.subject}" styleClass="blue" />
+														</span>
+
+														<span class="msg-time">
+															<i class="ace-icon fa fa-clock-o"></i>
+															<span>
+																<h:outputText value="#{message.date}">
+																	<f:convertDateTime pattern="dd-MM-yyyy HH:mm" />
+																</h:outputText>
+															</span>
+														</span>
+														<span class="msg-time">
+															<f:subview rendered="#{message.type==staticView.MESSAGE_TYPE_INFORMATION}">
+																<i class="ace-icon fa fa-flag red"></i>
+																<small>
+																	<h:outputText value=" For your information" />
+																</small>
+															</f:subview>
+															<f:subview rendered="#{message.type==staticView.MESSAGE_TYPE_ACTION}">
+																<i class="ace-icon fa fa-exclamation-circle green"></i>
+																<small>
+																	<h:outputText value=" For your action" />
+																</small>
+															</f:subview>
+														</span>
+													</span>
+												</h:outputLink>
+											</li>
+										</ui:repeat>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="messages.xhtml">
+										<h:outputText value="See all messages" />
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="grey">
+
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-user"></i>
+								<h:panelGroup id="currentOfficeStatus">
+									<span class="badge #{(sessionView.connectedUser.status==staticView.USER_STATUS_ACTIVE)?'badge-success':'badge-danger'}"> &nbsp; </span>
+								</h:panelGroup>
+							</a>
+						</li>
+
+						<li class="green" onclick="location.href='delegationList.xhtml'">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<img src="resources/images/delegation.png" style="width: 20px; height: 20px" />
+								<span class="badge badge-success">
+									<h:outputText value="+5" />
+								</span>
+							</a>
+						</li>
+
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="#{sessionView.connectedUser.idPhoto}"  />
+								<span class="user-info hidden-xs">
+									<small>
+										<h:outputText value="Welcome," />
+									</small>
+									<h:outputText value="#{sessionView.connectedUser.fullname}" />
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#{staticView.INDEX_PAGE}">
+										<i class="ace-icon fa fa-home blue"></i>
+										<h:outputText value="Home" />
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-envelope orange"></i>
+										<h:outputText value="Send Mail To Support" />
+									</a>
+								</li>
+
+								<li>
+									<p:commandLink onclick="PF('changePasswordDlg').show()">
+										<i class="ace-icon fa fa-cog pink"></i>
+										<h:outputText value="Change Password" />
+									</p:commandLink>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<p:commandLink action="#{loginBean.doLogout}">
+										<i class="ace-icon fa fa-power-off red"></i>
+										<h:outputText value="Logout" />
+									</p:commandLink>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</h:form>
+	<h:form id="changePasswordForm">
+		<p:dialog widgetVar="changePasswordDlg" modal="true" closable="false" resizable="false" showHeader="false">
+			<button type="button" class="bootbox-close-button close" onclick="PF('changePasswordDlg').hide()">
+				<h:outputText value="x" />
+			</button>
+			<div class="modal-header">
+				<h4 class="modal-title">
+					<i class="ace-icon fa fa-cog pink" />
+					<h:outputText value=" Change my password" />
+				</h4>
+			</div>
+			<div class="modal-body">
+				<p:messages id="change_password_messages" closable="true" />
+				<div class="col-sm-12 row">
+					<div class="col-sm-offset-2 col-sm-10  col-sm-offset-1 col-xs-10 form-group">
+						<div class="col-sm-3 col-xs-5">
+							<h:outputText value="Old Password" />
+						</div>
+						<div class="col-sm-9 col-xs-7">
+							<p:password value="#{profileView.oldPassword}" required="true" requiredMessage="You should insert your old password" />
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 form-group">
+						<div class="col-sm-3 col-xs-5">
+							<h:outputText value="New Password" />
+						</div>
+						<div class="col-sm-9 col-xs-7">
+							<p:password value="#{profileView.newPassword}" required="true" requiredMessage="New password is required" />
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 form-group">
+						<div class="col-sm-3 col-xs-5">
+							<h:outputText value="Repeat Password" />
+						</div>
+						<div class="col-sm-9 col-xs-7">
+							<p:password value="#{profileView.again}" required="true" requiredMessage="Please do up your new password" />
+						</div>
+					</div>
+				</div>
+				<div class="row"></div>
+			</div>
+			<div class="modal-footer">
+				<p:commandButton onclick="PF('changePasswordDlg').hide()" value="Hide" styleClass="btn btn-warning" partialSubmit="true" process="@this" />
+				<p:commandButton action="#{profileView.changePassword()}" value="Change" styleClass="btn btn-success" update="change_password_messages" />
+			</div>
+		</p:dialog>
+	</h:form>
+
+</ui:composition>

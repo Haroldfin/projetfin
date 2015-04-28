@@ -1,0 +1,17 @@
+.inbox_container{
+	box-sizing: border-box;
+	color: rgb(51, 51, 51);
+	display: block;
+	float: left;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	height: 532px;
+	line-height: 21px;
+	min-height: 1px;
+	padding-left: 12px;
+	padding-right: 12px;
+	position: relative;
+	visibility: visible;
+	width: 524.5px;
+	zoom: 1;
+}
